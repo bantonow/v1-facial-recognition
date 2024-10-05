@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recognition Results</title>
+</head>
+<body>
+    <h1>Recognition Results</h1>
+    {% if names %}
+        <ul>
+            {% for name in names %}
+                <li>{{ name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No faces recognized.</p>
+    {% endif %}
+    <img src="{{ url_for('static', filename='result.jpg') }}" alt="Result Image">
+    <br><br>
+    <a href="/">Upload Another Image</a>
+</body>
+</html>
